@@ -16,7 +16,7 @@
   @if(app()->getLocale() == 'ar')
   <link rel="stylesheet" href="{{ asset('dashboard') }}/dist/css/rtl/AdminLTE.min.css">
   <link rel="stylesheet" href="{{ asset('dashboard') }}/dist/css/rtl/bootstrap-rtl.min.css">
-  <link rel="stylesheet" href="{{ asset('dashboard') }}/dist/css/rtl/rtl.css">
+  <link rel="stylesheet" href="{{ asset('dashboard') }}/dist/css/rtl/rtl.css"/>
   <link href="https://fonts.googleapis.com/css?family=Cairo:400,600&amp;subset=arabic" rel="stylesheet">
     <style>
         html, body, h1, h2, h3{
@@ -44,8 +44,8 @@
 <!-- <script src="{{ asset('dashboard') }}/js/jquery.min.js"></script> -->
 
   <link rel="stylesheet" href="{{ asset('dashboard') }}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <link rel="stylesheet" href="{{ asset('dashboard') }}/plugins/noty/noty.css">
-  <script src="{{ asset('dashboard') }}/plugins/noty/noty.min.js"></script>
+  <link rel="stylesheet" href="{{ url('dashboard') }}/plugins/noty/noty.css">
+  <script src="{{ url('dashboard') }}/plugins/noty/noty.min.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -329,6 +329,54 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('dashboard') }}/dist/js/demo.js"></script>
 </div>
+<script>
+    $(document).ready(function () {
+
+        //delete
+        $('.delete').click(function (e) {
+
+            var that = $(this)
+
+            e.preventDefault();
+
+            var n = new Noty({
+                text: "@lang('site.confirm_delete')",
+                type: "warning",
+                killer: true,
+                buttons: [
+                    Noty.button("@lang('site.yes')", 'btn btn-success mr-2', function () {
+                        that.closest('form').submit();
+                    }),
+
+                    Noty.button("@lang('site.no')", 'btn btn-primary mr-2', function () {
+                        n.close();
+                    })
+                ]
+            });
+
+            n.show();
+
+        });//end of delete
+
+        $(".image").change(function () {
+
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('.image-preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(this.files[0]);
+            }
+
+        });
+
+    });
+
+
+</script>
+
 </body>
 </html>
 

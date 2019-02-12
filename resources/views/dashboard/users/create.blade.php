@@ -23,7 +23,7 @@
             <div class="box-body">
 
             @include('partials._errors')
-            <form action="{{ route('dashboard.users.store') }}" method="post">
+            <form action="{{ route('dashboard.users.store') }}" method="post" enctype="multipart/form-data" >
                 {{ csrf_field() }}
                 {{ method_field('post') }}
                 <div class="form-group">
@@ -43,6 +43,17 @@
 
 
                 <div class="form-group">
+                    <label for="image">@lang('site.image')</label>
+                    <input type="file" class="form-control image" name="image">
+                </div>
+
+
+                <div class="form-group">
+                    <img src="{{ url('uploads/user_images/4.png')}}" class="img-thumbnail image-preview" alt="" style="width:150px; height:100px">
+                </div>
+
+
+                <div class="form-group">
                     <label for="password">@lang('site.password')</label>
                     <input type="password" class="form-control" name="password">
                 </div>
@@ -57,7 +68,8 @@
                     <div class="nav-tabs-custom">
 
                     @php
-                        $models = ['users', 'categories', 'products']
+                        $models = ['users', 'categories', 'products'];
+                        $maps = ['create', 'read', 'update', 'delete'];
 
                     @endphp
 
@@ -73,11 +85,10 @@
                           @foreach($models as $index => $model)
 
                         <div class="tab-pane {{ $index == 0 ? 'active' : '' }}" id="{{ $model }}">
+                            @foreach($maps as $map)
+                            <label><input type="checkbox" name="permissions[]" value="{{ $map }}_{{ $model }}"> @lang('site.' . $map)</label>
+                            @endforeach
 
-                            <label for=""><input type="checkbox" name="permissions[]" value="create_{{ $model }}"> @lang('site.create')</label>
-                            <label for=""><input type="checkbox" name="permissions[]" value="read_{{ $model }}"> @lang('site.read')</label>
-                            <label for=""><input type="checkbox" name="permissions[]" value="update_{{ $model }}"> @lang('site.update')</label>
-                            <label for=""><input type="checkbox" name="permissions[]" value="delete_{{ $model }}"> @lang('site.delete')</label>
 
                         </div>
                         @endforeach
