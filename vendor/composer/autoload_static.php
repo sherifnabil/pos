@@ -144,6 +144,7 @@ class ComposerStaticInitdee6d728a996410063f98c83b011c69d
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
+            'Dimsav\\Translatable\\' => 20,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -384,6 +385,10 @@ class ComposerStaticInitdee6d728a996410063f98c83b011c69d
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
+        'Dimsav\\Translatable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dimsav/laravel-translatable/src/Translatable',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -439,6 +444,8 @@ class ComposerStaticInitdee6d728a996410063f98c83b011c69d
     );
 
     public static $classMap = array (
+        'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\CategoryTranslation' => __DIR__ . '/../..' . '/app/CategoryTranslation.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -447,6 +454,7 @@ class ComposerStaticInitdee6d728a996410063f98c83b011c69d
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Dashboard\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Dashboard/CategoryController.php',
         'App\\Http\\Controllers\\Dashboard\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Dashboard/DashboardController.php',
         'App\\Http\\Controllers\\Dashboard\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Dashboard/UserController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
@@ -459,6 +467,8 @@ class ComposerStaticInitdee6d728a996410063f98c83b011c69d
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Permission' => __DIR__ . '/../..' . '/app/Permission.php',
+        'App\\Product' => __DIR__ . '/../..' . '/app/Product.php',
+        'App\\ProductTranslation' => __DIR__ . '/../..' . '/app/ProductTranslation.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -509,6 +519,9 @@ class ComposerStaticInitdee6d728a996410063f98c83b011c69d
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'Dimsav\\Translatable\\Exception\\LocalesNotDefinedException' => __DIR__ . '/..' . '/dimsav/laravel-translatable/src/Translatable/Exception/LocalesNotDefinedException.php',
+        'Dimsav\\Translatable\\Translatable' => __DIR__ . '/..' . '/dimsav/laravel-translatable/src/Translatable/Translatable.php',
+        'Dimsav\\Translatable\\TranslatableServiceProvider' => __DIR__ . '/..' . '/dimsav/laravel-translatable/src/Translatable/TranslatableServiceProvider.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',

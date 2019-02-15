@@ -78,9 +78,9 @@
       @include('layouts.dashboard._aside')
 
 
+      @include('partials._session')
       @yield('content')
     </section>
-    @include('partials._session')
     <!-- /.content -->
 
 </div>
@@ -309,6 +309,9 @@
     <!-- jvectormap -->
     <script src="{{ asset('dashboard') }}/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="{{ asset('dashboard') }}/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+
+    <script src="{{ asset('dashboard') }}/plugins/ckeditor/ckeditor.js"></script>
     <!-- jQuery Knob Chart -->
     <script src="{{ asset('dashboard') }}/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
     <!-- daterangepicker -->
@@ -372,7 +375,10 @@
 
         });
 
+        CKEDITOR.config.language = "{{ app()->getLocale() }}";
     });
+
+
 
 
 </script>

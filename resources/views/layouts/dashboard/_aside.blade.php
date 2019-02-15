@@ -211,16 +211,43 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="active">
           <a href="{{ route('dashboard.index') }}">
-            <i class="fa fa-th"></i> <span>@lang('site.dashboard')</span>
+            <i class="fa fa-home"></i> <span>@lang('site.dashboard')</span>
             <span class="pull-right-container">
                 </span>
           </a>
+
+
+
+       @if(auth()->user()->hasPermission('read_categories'))
+       <li class="">
+          <a href="{{ route('dashboard.categories.index') }}">
+            <i class="fa fa-tags"></i> <span>@lang('site.categories')</span>
+            <span class="pull-right-container"></span>
+          </a>
+
+        </li>
+
+       @endif
+
+
+       @if(auth()->user()->hasPermission('read_products'))
+       <li class="">
+          <a href="{{ route('dashboard.products.index') }}">
+            <i class="fa fa-th"></i> <span>@lang('site.products')</span>
+            <span class="pull-right-container"></span>
+          </a>
+
+        </li>
+
+       @endif
+
+
 
         </li>
        @if(auth()->user()->hasPermission('read_users'))
        <li class="">
           <a href="{{ route('dashboard.users.index') }}">
-            <i class="fa fa-th"></i> <span>@lang('site.users')</span>
+            <i class="fa fa-users"></i> <span>@lang('site.users')</span>
             <span class="pull-right-container"></span>
           </a>
 
